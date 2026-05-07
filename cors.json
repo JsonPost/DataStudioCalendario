@@ -1,0 +1,11 @@
+[
+  {
+    "origin": [
+      "https://datastudio.google.com",
+      "https://lookerstudio.google.com"
+    ],
+    "method": ["GET", "HEAD"],
+    "responseHeader": ["Content-Type"],
+    "maxAgeSeconds": 3600
+  }
+]
