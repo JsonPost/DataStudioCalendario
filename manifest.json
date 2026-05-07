@@ -1,12 +1,12 @@
 {
   "name": "Calendario de Tasks",
-  "organization": "TALSA",
+  "organization": "Jeison Gomez",
   "description": "Visualización de calendario interactivo con vista mensual y semanal. Muestra tasks por fecha con color por estado.",
   "logoUrl": "",
-  "organizationUrl": "https://talsa.com.co",
-  "supportUrl": "https://github.com/jeisongomez/DataStudioCalendario/issues",
-  "privacyPolicyUrl": "https://talsa.com.co",
-  "termsOfServiceUrl": "https://talsa.com.co",
+  "organizationUrl": "https://lumenanalytics.online",
+  "supportUrl": "https://lumenanalytics.online/blog",
+  "privacyPolicyUrl": "https://lumenanalytics.online",
+  "termsOfServiceUrl": "https://lumenanalytics.online",
   "devMode": true,
   "components": [
     {
