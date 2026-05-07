@@ -133,4 +133,4 @@ git add dist/ && git commit -m "update viz" && git push
 
 ## 📄 Licencia
 
-MIT — TALSA
+Json
