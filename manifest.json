@@ -8,7 +8,7 @@
   "privacyPolicyUrl": "https://lumenanalytics.online",
   "termsOfServiceUrl": "https://lumenanalytics.online",
   "packageUrl": "https://jsonpost.github.io/DataStudioCalendario/",
-  "devMode": true,
+  "devMode": false,
   "components": [
     {
       "id": "calendario",
