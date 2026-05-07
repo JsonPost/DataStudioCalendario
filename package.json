@@ -1,0 +1,15 @@
+{
+  "name": "datastudio-calendario",
+  "version": "1.0.0",
+  "description": "Visualizacion comunitaria de calendario para Looker Studio",
+  "scripts": {
+    "build": "node build.js",
+    "dev": "node build.js --watch"
+  },
+  "dependencies": {
+    "@google/dscc": "^0.3.14"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.0"
+  }
+}

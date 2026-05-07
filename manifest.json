@@ -1,0 +1,24 @@
+{
+  "name": "Calendario de Tasks",
+  "organization": "TALSA",
+  "description": "Visualización de calendario interactivo con vista mensual y semanal. Muestra tasks por fecha con color por estado.",
+  "logoUrl": "",
+  "organizationUrl": "https://talsa.com.co",
+  "supportUrl": "https://github.com/jeisongomez/DataStudioCalendario/issues",
+  "privacyPolicyUrl": "https://talsa.com.co",
+  "termsOfServiceUrl": "https://talsa.com.co",
+  "devMode": true,
+  "components": [
+    {
+      "id": "calendario",
+      "name": "Calendario de Tasks",
+      "description": "Calendario interactivo con vista mensual/semanal para visualizar tasks por fecha",
+      "iconUrl": "",
+      "resource": {
+        "js": "dist/index.js",
+        "config": "src/index.json",
+        "css": "dist/index.css"
+      }
+    }
+  ]
+}
