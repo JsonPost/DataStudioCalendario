@@ -10,7 +10,7 @@
   "devMode": true,
   "components": [
     {
-      "id": "calendario-v3",
+      "id": "calendario-v4",
       "name": "Calendario Tasks",
       "description": "Calendario de tasks",
       "iconUrl": "https://jsonpost.github.io/DataStudioCalendario/icon.png",
