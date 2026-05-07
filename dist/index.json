@@ -10,8 +10,7 @@
           "type": "DIMENSION",
           "options": {
             "min": 1,
-            "max": 1,
-            "supportedTypes": ["DATE", "YEAR_MONTH", "DATE_HOUR"]
+            "max": 1
           }
         },
         {
@@ -20,27 +19,27 @@
           "type": "DIMENSION",
           "options": {
             "min": 1,
-            "max": 1,
-            "supportedTypes": ["TEXT"]
+            "max": 1
           }
         },
         {
           "id": "estado",
-          "label": "Estado / Categoría",
+          "label": "Estado / Categoria",
           "type": "DIMENSION",
           "options": {
             "min": 0,
             "max": 1,
-            "supportedTypes": ["TEXT"]
+            "optional": true
           }
         },
         {
           "id": "metrica",
-          "label": "Métrica (ej: horas, puntos)",
+          "label": "Metrica",
           "type": "METRIC",
           "options": {
             "min": 0,
-            "max": 1
+            "max": 1,
+            "optional": true
           }
         }
       ]
@@ -52,28 +51,8 @@
       "label": "Opciones del Calendario",
       "elements": [
         {
-          "id": "vistaDefault",
-          "label": "Vista por defecto",
-          "type": "SELECT_SINGLE",
-          "defaultValue": "month",
-          "options": [
-            { "label": "Mensual", "value": "month" },
-            { "label": "Semanal", "value": "week" }
-          ]
-        },
-        {
-          "id": "primeraFila",
-          "label": "Primer día de la semana",
-          "type": "SELECT_SINGLE",
-          "defaultValue": "0",
-          "options": [
-            { "label": "Domingo", "value": "0" },
-            { "label": "Lunes", "value": "1" }
-          ]
-        },
-        {
           "id": "mostrarMetrica",
-          "label": "Mostrar métrica en chips",
+          "label": "Mostrar metrica en chips",
           "type": "CHECKBOX",
           "defaultValue": "true"
         }

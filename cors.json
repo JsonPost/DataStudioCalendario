@@ -4,8 +4,14 @@
       "https://datastudio.google.com",
       "https://lookerstudio.google.com"
     ],
-    "method": ["GET", "HEAD"],
-    "responseHeader": ["Content-Type"],
+    "method": ["GET", "HEAD", "OPTIONS"],
+    "responseHeader": [
+      "Content-Type",
+      "Authorization",
+      "Content-Length",
+      "User-Agent",
+      "x-goog-meta-command"
+    ],
     "maxAgeSeconds": 3600
   }
 ]

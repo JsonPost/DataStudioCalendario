@@ -1,0 +1,1 @@
+{"data":[{"id":"concepts","label":"Datos","elements":[{"id":"fecha","label":"Fecha","type":"DIMENSION","options":{"min":1,"max":1}},{"id":"tarea","label":"Task","type":"DIMENSION","options":{"min":1,"max":1}},{"id":"estado","label":"Estado","type":"DIMENSION","options":{"min":0,"max":1}},{"id":"metrica","label":"Metrica","type":"METRIC","options":{"min":0,"max":1}}]}],"style":[]}

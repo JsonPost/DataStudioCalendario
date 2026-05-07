@@ -1,23 +1,23 @@
 {
   "name": "Calendario de Tasks",
   "organization": "Jeison Gomez",
-  "description": "Visualización de calendario interactivo con vista mensual y semanal. Muestra tasks por fecha con color por estado.",
+  "description": "Calendario interactivo de tasks por fecha",
   "logoUrl": "https://jsonpost.github.io/DataStudioCalendario/icon.png",
   "organizationUrl": "https://lumenanalytics.online",
-  "supportUrl": "https://lumenanalytics.online/blog",
+  "supportUrl": "https://lumenanalytics.online",
   "privacyPolicyUrl": "https://lumenanalytics.online",
   "termsOfServiceUrl": "https://lumenanalytics.online",
   "devMode": true,
   "components": [
     {
-      "id": "calendario",
-      "name": "Calendario de Tasks",
-      "description": "Calendario interactivo con vista mensual/semanal para visualizar tasks por fecha",
+      "id": "calendario-v3",
+      "name": "Calendario Tasks",
+      "description": "Calendario de tasks",
       "iconUrl": "https://jsonpost.github.io/DataStudioCalendario/icon.png",
       "resource": {
-        "js": "dist/index.js",
-        "config": "dist/index.json",
-        "css": "dist/index.css"
+        "js": "index.js",
+        "config": "index.json",
+        "css": "index.css"
       }
     }
   ]
