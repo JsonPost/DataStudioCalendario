@@ -1,3 +1,48 @@
-/* DataStudio Calendario — TALSA */
-var require = require || function(m){ if(m==='@google/dscc') return window.dscc; };
-"use strict";(()=>{var V=Object.defineProperty,R=Object.defineProperties;var _=Object.getOwnPropertyDescriptors;var A=Object.getOwnPropertySymbols;var z=Object.prototype.hasOwnProperty,J=Object.prototype.propertyIsEnumerable;var L=(e,t,n)=>t in e?V(e,t,{enumerable:!0,configurable:!0,writable:!0,value:n}):e[t]=n,T=(e,t)=>{for(var n in t||(t={}))z.call(t,n)&&L(e,n,t[n]);if(A)for(var n of A(t))J.call(t,n)&&L(e,n,t[n]);return e},x=(e,t)=>R(e,_(t));var i=new Date;function m(e){return`${e.getFullYear()}${String(e.getMonth()+1).padStart(2,"0")}${String(e.getDate()).padStart(2,"0")}`}var W={tables:{DEFAULT:[{fecha:[m(i)],tarea:["Reuni\xF3n de equipo"],estado:["Pendiente"],metrica:[2]},{fecha:[m(i)],tarea:["Revisi\xF3n de c\xF3digo"],estado:["En progreso"],metrica:[3]},{fecha:[m(new Date(i.getFullYear(),i.getMonth(),i.getDate()+1))],tarea:["Deploy a producci\xF3n"],estado:["Pendiente"],metrica:[5]},{fecha:[m(new Date(i.getFullYear(),i.getMonth(),i.getDate()+2))],tarea:["Pruebas QA"],estado:["Completado"],metrica:[8]},{fecha:[m(new Date(i.getFullYear(),i.getMonth(),i.getDate()+2))],tarea:["Documentaci\xF3n API"],estado:["En progreso"],metrica:[4]},{fecha:[m(new Date(i.getFullYear(),i.getMonth(),i.getDate()-1))],tarea:["Estimaci\xF3n sprint"],estado:["Completado"],metrica:[1]},{fecha:[m(new Date(i.getFullYear(),i.getMonth(),i.getDate()+5))],tarea:["Presentaci\xF3n cliente"],estado:["Pendiente"],metrica:[3]}]},style:{vistaDefault:{value:"month"},primeraFila:{value:"0"},mostrarMetrica:{value:"true"}}},E=["#1A73E8","#34A853","#FBBC04","#EA4335","#9334E6","#00ACC1","#FB8C00","#43A047","#E91E63","#00897B"],h="month",u=new Date,S=[],f={},k=0,F=0,I=!0,O=!1;function N(e){return!e||e===""?E[0]:(f[e]||(f[e]=E[k%E.length],k++),f[e])}function U(e){if(!e&&e!==0)return null;let t=String(e).trim();if(/^\d{8}$/.test(t))return new Date(parseInt(t.slice(0,4),10),parseInt(t.slice(4,6),10)-1,parseInt(t.slice(6,8),10));let n=new Date(t);return isNaN(n.getTime())?null:n}function D(e,t){return e.getFullYear()===t.getFullYear()&&e.getMonth()===t.getMonth()&&e.getDate()===t.getDate()}function g(e,t){let n=new Date(e);return n.setDate(n.getDate()+t),n}function w(e){let t=new Date(e),a=(t.getDay()-F+7)%7;return t.setDate(t.getDate()-a),t}function j(e){return new Date(e.getFullYear(),e.getMonth(),1)}function q(e){return new Date(e.getFullYear(),e.getMonth()+1,0)}var Q=["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"],X=["Dom","Lun","Mar","Mi\xE9","Jue","Vie","S\xE1b"];function $(){let e=[];for(let t=0;t<7;t++)e.push(X[(F+t)%7]);return e}function B(e){let t=e.style||{};O||(h=t.vistaDefault&&t.vistaDefault.value||"month",O=!0),F=parseInt(t.primeraFila&&t.primeraFila.value||"0",10),I=(t.mostrarMetrica&&t.mostrarMetrica.value)!==!1&&(t.mostrarMetrica&&t.mostrarMetrica.value)!=="false",f={},k=0,S=(e.tables&&e.tables.DEFAULT||[]).map(a=>({date:U(a.fecha&&a.fecha[0]),name:a.tarea&&a.tarea[0]||"(sin nombre)",status:a.estado&&a.estado[0]||"",metric:a.metrica&&a.metrica[0]!==void 0?a.metrica[0]:null})).filter(a=>a.date!==null),[...new Set(S.map(a=>a.status).filter(Boolean))].forEach(a=>N(a)),y()}function y(){let e=document.getElementById("cal-root");e.innerHTML="",e.appendChild(G()),e.appendChild(h==="month"?Z():ee()),e.appendChild(te())}function G(){let e=o("div","cal-header"),t=o("div","cal-header-left"),n=o("button","cal-nav-btn");n.innerHTML="&#8249;",n.title="Anterior",n.onclick=()=>Y(-1);let a=o("button","cal-today-btn");a.textContent="Hoy",a.onclick=()=>{u=new Date,y()};let r=o("button","cal-nav-btn");r.innerHTML="&#8250;",r.title="Siguiente",r.onclick=()=>Y(1),t.appendChild(n),t.appendChild(a),t.appendChild(r);let c=o("div","cal-header-center"),s=o("h2","cal-title");s.textContent=K(),c.appendChild(s);let l=o("div","cal-toggle"),d=o("button","cal-toggle-btn"+(h==="month"?" active":""));d.textContent="Mes",d.onclick=()=>{h="month",y()};let p=o("button","cal-toggle-btn"+(h==="week"?" active":""));return p.textContent="Semana",p.onclick=()=>{h="week",y()},l.appendChild(d),l.appendChild(p),e.appendChild(t),e.appendChild(c),e.appendChild(l),e}function K(){if(h==="month")return`${Q[u.getMonth()]} ${u.getFullYear()}`;let e=w(u),t=g(e,6),n={day:"numeric",month:"short"};return`${e.toLocaleDateString("es-CO",n)} \u2014 ${t.toLocaleDateString("es-CO",x(T({},n),{year:"numeric"}))}`}function Y(e){h==="month"?u=new Date(u.getFullYear(),u.getMonth()+e,1):u=g(u,e*7),y()}function Z(){let e=o("div","cal-month-grid"),t=new Date;$().forEach(l=>{let d=o("div","cal-day-header");d.textContent=l,e.appendChild(d)});let a=j(u),r=q(u),c=w(a),s=g(w(g(r,6)),6);for(;c<=s;){let l=o("div","cal-day-cell"),d=D(c,t);c.getMonth()!==u.getMonth()&&l.classList.add("other-month"),d&&l.classList.add("today");let C=o("span","cal-day-num");C.textContent=c.getDate(),l.appendChild(C);let M=H(c),v=3;if(M.slice(0,v).forEach(b=>{l.appendChild(P(b,!1))}),M.length>v){let b=o("span","cal-more");b.textContent=`+${M.length-v} m\xE1s`,l.appendChild(b)}e.appendChild(l),c=g(c,1)}return e}function ee(){let e=o("div","cal-week-container"),t=new Date,n=w(u),a=$(),r=o("div","cal-week-header-row");for(let s=0;s<7;s++){let l=g(n,s),d=o("div","cal-week-header-cell"+(D(l,t)?" today":"")),p=o("span","cal-week-day-name");p.textContent=a[s];let C=o("span","cal-week-day-num"+(D(l,t)?" today-circle":""));C.textContent=l.getDate(),d.appendChild(p),d.appendChild(C),r.appendChild(d)}let c=o("div","cal-week-body-row");for(let s=0;s<7;s++){let l=g(n,s),d=o("div","cal-week-body-cell"+(D(l,t)?" today":""));H(l).forEach(p=>{d.appendChild(P(p,!0))}),c.appendChild(d)}return e.appendChild(r),e.appendChild(c),e}function P(e,t){let n=N(e.status),a=o("div","cal-task-chip"+(t?" full":""));a.style.borderLeftColor=n,a.style.backgroundColor=n+"20";let r=o("span","cal-task-name");if(r.textContent=e.name,a.appendChild(r),t&&e.status){let c=o("span","cal-task-badge");c.style.backgroundColor=n,c.textContent=e.status,a.appendChild(c)}if(t&&I&&e.metric!==null&&e.metric!==void 0){let c=o("span","cal-task-metric");c.textContent=typeof e.metric=="number"?e.metric.toLocaleString("es-CO"):e.metric,a.appendChild(c)}return a}function te(){let e=Object.keys(f);if(e.length===0)return o("div","");let t=o("div","cal-legend");return e.forEach(n=>{let a=o("div","cal-legend-item"),r=o("span","cal-legend-dot");r.style.backgroundColor=f[n];let c=o("span","cal-legend-label");c.textContent=n,a.appendChild(r),a.appendChild(c),t.appendChild(a)}),t}function o(e,t){let n=document.createElement(e);return t&&(n.className=t.trim()),n}function H(e){return S.filter(t=>D(t.date,e))}(function(){if(!document.getElementById("cal-root")){let t=document.createElement("div");t.id="cal-root",document.body.appendChild(t)}typeof dscc!="undefined"?dscc.subscribeToData(B,{transform:dscc.tableTransform}):B(W)})();})();
+{
+  "data": [
+    {
+      "id": "concepts",
+      "label": "Datos del Calendario",
+      "elements": [
+        {
+          "id": "fecha",
+          "label": "Fecha",
+          "type": "dimension",
+          "options": { "min": 1, "max": 1 }
+        },
+        {
+          "id": "tarea",
+          "label": "Nombre de Task",
+          "type": "dimension",
+          "options": { "min": 1, "max": 1 }
+        },
+        {
+          "id": "estado",
+          "label": "Estado / Categoria",
+          "type": "dimension",
+          "options": { "min": 0, "max": 1 }
+        },
+        {
+          "id": "metrica",
+          "label": "Metrica",
+          "type": "metric",
+          "options": { "min": 0, "max": 1 }
+        }
+      ]
+    }
+  ],
+  "style": [
+    {
+      "id": "opciones",
+      "label": "Opciones del Calendario",
+      "elements": [
+        {
+          "id": "mostrarMetrica",
+          "label": "Mostrar metrica en chips",
+          "type": "boolean",
+          "defaultValue": true
+        }
+      ]
+    }
+  ]
+}
