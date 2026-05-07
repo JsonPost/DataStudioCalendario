@@ -7,7 +7,7 @@
   "supportUrl": "https://lumenanalytics.online/blog",
   "privacyPolicyUrl": "https://lumenanalytics.online",
   "termsOfServiceUrl": "https://lumenanalytics.online",
-  "devMode": false,
+  "devMode": true,
   "components": [
     {
       "id": "calendario",
